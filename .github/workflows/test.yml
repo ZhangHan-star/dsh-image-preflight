@@ -1,0 +1,42 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      # `sharp` is an optionalDependency: the runner gets the prebuilt binary,
+      # and the plugin degrades to pass-through if it is ever missing.
+      - name: Install
+        run: npm install --no-audit --no-fund
+
+      - name: Unit tests (pipeline + wiring)
+        run: npm run test:unit
+
+      # Generates every fixture on the fly, asserts the 30 catalogue cases and
+      # writes test/fixtures/REPORT.md.
+      - name: Catalogue verification
+        run: npm run test:verify
+
+      - name: Upload verification report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verification-report-node${{ matrix.node }}
+          path: test/fixtures/REPORT.md
+          if-no-files-found: ignore

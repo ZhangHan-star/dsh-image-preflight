@@ -1,0 +1,7 @@
+node_modules/
+.npm-cache/
+
+# Generated test fixtures and reports: reproduced by
+#   node test/fixtures/generate.mjs --clean
+test/fixtures/files/
+test/fixtures/REPORT.md

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Image Preflight",
+    "description": "Repairs image uploads before admission: relabels a lying extension without touching a byte, and re-encodes only images that really exceed a limit."
+  }
+}

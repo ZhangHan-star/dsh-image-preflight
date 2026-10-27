@@ -1,0 +1,11 @@
+# 统一按 LF 存储，避免 Windows 上 clone 后出现整文件换行差异
+* text=auto eol=lf
+
+# 测试图片是运行时生成的，仓库里不应出现；这条只是兜底
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.tiff binary
+*.avif binary

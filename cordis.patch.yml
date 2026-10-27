@@ -1,0 +1,7 @@
+# Package layer for dsh-image-preflight.
+# Inserts one Host row; it wraps ctx.attachments.saveImages/saveImage at runtime.
+- insert:
+    - id: dsh-image-preflight
+      name: dsh-image-preflight
+      config:
+        enabled: true
