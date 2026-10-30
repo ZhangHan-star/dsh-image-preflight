@@ -1,5 +1,6 @@
 node_modules/
 .npm-cache/
+package-lock.json
 
 # Generated test fixtures and reports: reproduced by
 #   node test/fixtures/generate.mjs --clean

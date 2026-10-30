@@ -89,7 +89,7 @@ It only ever moves an image toward "acceptable". The relabel path touches zero b
 No. Everything happens in memory, on your machine. No network calls, no temp files.
 
 **Do I need to install anything else?**
-It uses sharp. If sharp isn't available, the plugin quietly does nothing and your uploads behave exactly as they did before — no error, no hang.
+It uses sharp, but you don't have to install it: the plugin looks in its own folder first, then in the DSH profile, then in DSH's own installation. Only when all three fail does it quietly do nothing — uploads then behave exactly as before.
 
 **Does it change the chat UI?**
 No. It only steps in on the host side, at the moment an image is accepted. The composer, thumbnails, draft strip and history are all still DSH's own.

@@ -1,6 +1,6 @@
 {
   "name": "dsh-image-preflight",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Preflight for DSH image attachments: a lying extension or MIME alias is relabelled byte-for-byte, an oversized or unsupported-but-decodable image is re-encoded just far enough to pass admission, and everything else stays untouched.",
   "keywords": [
     "deepseek-harness",
@@ -49,6 +49,9 @@
     "test:all": "npm run test:unit && npm run test:verify"
   },
   "optionalDependencies": {
+    "sharp": "^0.35.3"
+  },
+  "devDependencies": {
     "sharp": "^0.35.3"
   },
   "publishConfig": {
